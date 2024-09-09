@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PWPB</title>
+    <link rel="stylesheet" href="Produk.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="Assets/Logo.png" alt="Logo" class="navbar-logo"> 
+        </div>        
+        <ul class="navbar-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Produk.html">Produk</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Logo Keranjang -->
+    <div class="cart-logo-container">
+        <img src="Assets/cart-icon.png" alt="Keranjang" class="cart-logo" onclick="togglePopup('cart-popup')">
+    </div>
+
+    <main>
+        <section class="cart">
+            <h2>Produk Buah</h2>
+            
+            <!-- Produk Apel -->
+            <div class="cart-item" data-product="apel" data-price="10000" data-image="Assets/apple.jpeg">
+                <img src="Assets/apple.jpeg" alt="Apple" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Apel</h3>
+                    <p>Harga: Rp 10.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Pisang -->
+            <div class="cart-item" data-product="pisang" data-price="5000" data-image="Assets/banana.jpeg">
+                <img src="Assets/banana.jpeg" alt="Banana" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Pisang</h3>
+                    <p>Harga: Rp 5.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Anggur -->
+            <div class="cart-item" data-product="anggur" data-price="7000" data-image="Assets/grape.jpeg">
+                <img src="Assets/grape.jpeg" alt="Grape" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Anggur</h3>
+                    <p>Harga: Rp 7.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Stroberi -->
+            <div class="cart-item" data-product="stroberi" data-price="15000" data-image="Assets/strawberry.jpeg">
+                <img src="Assets/strawberry.jpeg" alt="Strawberry" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Stroberi</h3>
+                    <p>Harga: Rp 15.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Blueberry -->
+            <div class="cart-item" data-product="blueberry" data-price="8000" data-image="Assets/blueberry.jpeg">
+                <img src="Assets/blueberry.jpeg" alt="Blueberry" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Blueberry</h3>
+                    <p>Harga: Rp 8.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Semangka -->
+            <div class="cart-item" data-product="semangka" data-price="11000" data-image="Assets/watermelon.jpeg">
+                <img src="Assets/watermelon.jpeg" alt="Watermelon" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Semangka</h3>
+                    <p>Harga: Rp 11.000</p>
+                    <p>Stok: 100+</p>
+                    <div class="quantity-controls">
+                        <button class="btn-quantity" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" name="quantity" value="0" size="2" readonly>
+                        <button class="btn-quantity" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Tombol Submit -->
+            <div class="submit-container">
+                <button class="btn-submit" type="button" onclick="submitCart()">Submit</button>
+            </div>
+        </section>
+    </main>
+    
+
+    <!-- Popup Keranjang -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="cart-popup-close" onclick="togglePopup('cart-popup')">&times;</span>
+            <h3>Keranjang Anda</h3>
+            <div id="cart-items-list">
+                <!-- Daftar produk yang dipilih akan ditampilkan di sini -->
+            </div>
+            <div id="cart-total">
+                <!-- Total harga akan ditampilkan di sini -->
+                <button class="btn-checkout" onclick="togglePopup('cart-popup'); togglePopup('checkout-popup')">Lanjutkan Pembayaran</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Popup Checkout -->
+<div id="checkout-popup" class="checkout-popup">
+    <div class="checkout-popup-content">
+        <span class="checkout-popup-close" onclick="togglePopup('checkout-popup')">&times;</span>
+        <h3>Form Pembayaran</h3>
+        <form id="checkout-form">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Nomor Handphone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Alamat:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="additional">Tambahan:</label>
+            <textarea id="additional" name="additional" rows="4"></textarea>
+
+            <button type="button" onclick="togglePopup('checkout-popup', 'cart-popup')">Kembali</button>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

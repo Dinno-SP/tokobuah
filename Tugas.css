@@ -1,0 +1,291 @@
+/* Menata navigasi */
+* {
+    margin: 0; /* Menghapus margin default dari semua elemen */
+    padding: 0; /* Menghapus padding default dari semua elemen */
+    box-sizing: border-box; /* Memastikan padding termasuk dalam lebar total */
+}
+
+.navbar {
+    background-color: rgba(51, 51, 51, 0.5); /* Warna abu-abu transparan seperti di Tugas.css */
+    overflow: hidden; /* Mengatasi masalah float */
+    position: fixed; /* Membuat navigasi tetap di atas saat menggulir halaman */
+    top: 0; /* Menempatkan navigasi di bagian atas halaman */
+    left: 0; /* Menempatkan navigasi ke ujung kiri */
+    width: 100%; /* Membuat navigasi selebar halaman */
+    z-index: 1000; /* Menyediakan lapisan di atas konten lainnya */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+    padding: 0 20px; /* Menambahkan padding kiri dan kanan */
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto untuk navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Menambahkan bayangan */
+}
+
+/* Logo pada navbar */
+.navbar-left {
+    display: flex; /* Menampilkan elemen secara horizontal */
+    align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+    margin-right: auto; /* Menggeser elemen ini ke kiri */
+}
+
+.navbar-logo {
+    width: 40px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto; /* Memastikan tinggi logo menyesuaikan proporsi */
+    margin-right: 10px; /* Menambahkan jarak antara logo dan teks */
+}
+
+.navbar-list {
+    list-style-type: none; /* Menghapus tanda bullet pada daftar */
+    display: flex; /* Menampilkan elemen secara horizontal */
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+}
+
+.navbar-list li {
+    margin: 0 5px; /* Menambahkan jarak antar tautan */
+}
+
+.navbar-list li a {
+    display: block; /* Membuat tautan menjadi block-level element */
+    color: white; /* Warna teks tautan */
+    text-align: center; /* Menyelarangkan teks di tengah */
+    padding: 14px 10px; /* Memberikan padding di dalam tautan */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+    border-radius: 25px; /* Membuat link menjadi oval */
+    transition: background-color 0.3s ease; /* Transisi untuk hover */
+}
+
+.navbar-list li a:hover {
+    background-color: #3b3f45; /* Warna hover yang lebih terang */
+}
+
+/* Tambahan reset untuk gambar */
+img {
+    display: block; /* Menghilangkan space bawah gambar yang disebabkan oleh display inline */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Merupakan element yang menerapkan atribut */
+a[href] {
+    color: #fff;
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    background-color: transparent; /* Menghapus background pada tautan */
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+}
+
+/* Element yang menerapkan nilai dengan tanda # */
+a[href^="#"] {
+    background-color: transparent; /* Menghapus background pada tautan */
+}
+
+/* Element yang menerapkan nilai Example */
+a[href*="youtube"] {
+    background-color: transparent; /* Menghapus background pada tautan */
+}
+
+/* Element yang menerapkan nilai InSensitive pada atribut HTML */
+a[href*="insensitive" i] {
+    color: yellow;
+    background-color: transparent; /* Menghapus background pada tautan */
+}
+
+/* Element yang menerapkan nilai .org pada HTML */
+a[href$=".org"] {
+    color: azure;
+    background-color: transparent; /* Menghapus background pada tautan */
+}
+
+/* Menambahkan gambar latar belakang */
+body {
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto untuk seluruh halaman */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('Assets/BGPembeli.jpg'); /* Ganti dengan gambar latar baru */
+    background-size: cover; /* Membuat gambar latar memenuhi seluruh area */
+    background-position: center; /* Memusatkan gambar latar */
+    height: 80vh; /* Tinggi dari hero section */
+    display: flex; /* Untuk menyusun teks di tengah */
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative; /* Agar elemen anak dengan absolute positioning bisa diatur */
+}
+
+/* Overlay untuk latar belakang agar teks lebih jelas */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay hitam transparan untuk meningkatkan keterbacaan */
+    z-index: 1; /* Overlay berada di bawah teks tetapi di atas gambar */
+}
+
+/* Teks pada hero section */
+.hero-content {
+    position: relative; /* Membuat elemen berada di atas overlay */
+    z-index: 2; /* Memastikan teks berada di atas overlay */
+    color: white; /* Warna teks tetap putih */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Menambahkan bayangan teks untuk kontras */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Tombol "Lihat Produk" */
+.btn-primary {
+    background-color: #28a745; /* Warna hijau solid untuk tombol */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    border: none; /* Menghilangkan border transparan atau tidak diinginkan */
+    position: relative; /* Agar tetap di atas overlay */
+    z-index: 2; /* Memastikan tombol tetap terlihat di atas overlay */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Warna hijau lebih gelap saat hover */
+}
+
+
+/* Highlight Section */
+.highlight {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+.highlight-item {
+    text-align: center;
+    max-width: 300px;
+}
+
+.highlight-item img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.highlight-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1e21;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Section Contact Us */
+.contact-us {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Latar belakang yang lebih terang */
+    min-height: 80vh; /* Memastikan tinggi minimum halaman */
+}
+
+.contact-us-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact-us h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-us p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Informasi Kontak */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Formulir Kontak */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antara elemen formulir */
+    align-items: center;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #218838;
+}

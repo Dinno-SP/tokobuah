@@ -1,0 +1,417 @@
+/* Menata navigasi */
+* {
+    margin: 0; /* Menghapus margin default dari semua elemen */
+    padding: 0; /* Menghapus padding default dari semua elemen */
+    box-sizing: border-box; /* Memastikan padding termasuk dalam lebar total */
+}
+
+.navbar {
+    background-color: rgba(51, 51, 51, 0.5); /* Warna abu-abu transparan seperti di Tugas.css */
+    overflow: hidden; /* Mengatasi masalah float */
+    position: fixed; /* Membuat navigasi tetap di atas saat menggulir halaman */
+    top: 0; /* Menempatkan navigasi di bagian atas halaman */
+    left: 0; /* Menempatkan navigasi ke ujung kiri */
+    width: 100%; /* Membuat navigasi selebar halaman */
+    z-index: 1000; /* Menyediakan lapisan di atas konten lainnya */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+    padding: 0 20px; /* Menambahkan padding kiri dan kanan */
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto untuk navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Menambahkan bayangan */
+}
+
+/* Logo pada navbar */
+.navbar-left {
+    display: flex; /* Menampilkan elemen secara horizontal */
+    align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+    margin-right: auto; /* Menggeser elemen ini ke kiri */
+}
+
+.navbar-logo {
+    width: 40px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto; /* Memastikan tinggi logo menyesuaikan proporsi */
+    margin-right: 10px; /* Menambahkan jarak antara logo dan teks */
+}
+
+.navbar-list {
+    list-style-type: none; /* Menghapus tanda bullet pada daftar */
+    display: flex; /* Menampilkan elemen secara horizontal */
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+}
+
+.navbar-list li {
+    margin: 0 5px; /* Menambahkan jarak antar tautan */
+}
+
+.navbar-list li a {
+    display: block; /* Membuat tautan menjadi block-level element */
+    color: white; /* Warna teks tautan */
+    text-align: center; /* Menyelarangkan teks di tengah */
+    padding: 14px 10px; /* Memberikan padding di dalam tautan */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+    border-radius: 25px; /* Membuat link menjadi oval */
+    transition: background-color 0.3s ease; /* Transisi untuk hover */
+}
+
+.navbar-list li a:hover {
+    background-color: #3b3f45; /* Warna hover yang lebih terang */
+}
+
+/* Tambahan reset untuk gambar */
+img {
+    display: block; /* Menghilangkan space bawah gambar yang disebabkan oleh display inline */
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Membulatkan sudut gambar */
+}
+
+/* Menata bagian utama */
+main {
+    background-image: url('Assets/BGPembeli2.png'); /* Gambar latar belakang di belakang tabel */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0;
+    min-height: 100vh;
+}
+
+.cart-item-image {
+    width: 100px; /* Lebar gambar */
+    height: auto; /* Tinggi otomatis */
+    margin-right: 20px; /* Jarak kanan */
+}
+
+.cart-item-details {
+    flex: 1; /* Mengambil sisa ruang */
+}
+
+.cart-item-details h3 {
+    font-size: 20px; /* Ukuran font */
+    margin: 0 0 10px 0; /* Margin atas dan bawah */
+    color: #333; /* Warna teks */
+}
+
+.cart-item-details p {
+    margin: 5px 0; /* Margin atas dan bawah */
+    color: #000000; /* Warna teks */
+}
+
+/* Menata kontrol kuantitas */
+.quantity-controls {
+    display: flex; /* Flexbox untuk tata letak horizontal */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    margin-top: 10px; /* Jarak atas dari elemen sebelumnya */
+}
+
+.btn-quantity {
+    background-color: #ddd; /* Warna latar belakang tombol */
+    border: 1px solid #ccc; /* Border tombol */
+    padding: 5px 10px; /* Padding tombol */
+    font-size: 16px; /* Ukuran font */
+    cursor: pointer; /* Pointer saat hover */
+    margin: 0 5px; /* Jarak antar tombol dan input */
+}
+
+/* Efek hover untuk tombol kuantitas */
+.btn-quantity:hover {
+    background-color: #ccc;
+    transform: scale(1.1); /* Sedikit membesarkan tombol saat di-hover */
+}
+
+.quantity-controls input {
+    text-align: center; /* Menyelaraskan teks di tengah */
+    border: 1px solid #ccc; /* Border input */
+    padding: 5px; /* Padding input */
+    font-size: 16px; /* Ukuran font */
+    width: 50px; /* Lebar input */
+}
+
+.cart-item:hover {
+    transform: scale(1.02); /* Membesarkan sedikit saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan saat hover */
+}
+
+/* Warna hover pada tombol submit */
+.btn-submit:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas saat hover */
+}
+
+/* Menambahkan gaya untuk logo keranjang */
+.cart-logo-container {
+    position: fixed; /* Memastikan elemen tetap pada posisi yang diinginkan */
+    bottom: 20px; /* Jarak dari bagian bawah halaman */
+    right: 20px; /* Jarak dari bagian kanan halaman */
+    z-index: 1000; /* Menyediakan lapisan di atas konten lainnya */
+}
+
+.cart-logo {
+    width: 50px; /* Lebar logo keranjang */
+    height: auto; /* Tinggi otomatis */
+    cursor: pointer; /* Pointer saat hover */
+}
+
+/* Menata popup keranjang */
+.cart-popup {
+    display: none; /* Menyembunyikan popup secara default */
+    position: fixed; /* Memastikan popup tetap pada posisi yang diinginkan */
+    top: 0; /* Jarak dari bagian atas halaman */
+    left: 0; /* Jarak dari bagian kiri halaman */
+    width: 100%; /* Lebar popup selebar halaman */
+    height: 100%; /* Tinggi popup setinggi halaman */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    z-index: 1001; /* Menyediakan lapisan di atas konten lainnya */
+    display: flex; /* Flexbox untuk menata konten popup */
+    justify-content: center; /* Menyelaraskan konten di tengah horizontal */
+    align-items: center; /* Menyelaraskan konten di tengah vertikal */
+}
+
+.cart-item-popup {
+    display: flex; /* Flexbox untuk tata letak horizontal */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    margin-bottom: 10px; /* Jarak bawah antar item */
+}
+
+.cart-item-popup img {
+    width: 50px; /* Lebar gambar di popup */
+    height: auto; /* Tinggi otomatis */
+    margin-right: 10px; /* Jarak kanan */
+}
+
+.cart-item-popup-details {
+    flex: 1; /* Mengambil sisa ruang */
+}
+
+.cart-item-popup-details h4 {
+    font-size: 18px; /* Ukuran font */
+    margin: 0 0 5px 0; /* Margin bawah */
+}
+
+#cart-total {
+    margin-top: 20px; /* Jarak atas dari daftar produk */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Teks tebal */
+}
+
+/* Menata tombol Lanjutkan Pembayaran */
+.btn-checkout {
+    background-color: #4CAF50; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghapus border default */
+    padding: 10px 20px; /* Padding dalam tombol */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    display: inline-block; /* Menampilkan tombol sebagai elemen inline-block */
+    font-size: 16px; /* Ukuran font */
+    margin-top: 10px; /* Jarak atas dari total harga */
+    cursor: pointer; /* Menampilkan pointer saat hover */
+    border-radius: 5px; /* Sudut membulat */
+}
+
+.btn-checkout:hover {
+    background-color: #45a049; /* Warna latar belakang saat hover */
+}
+
+/* Menata popup checkout */
+.checkout-popup {
+    display: none; /* Tersembunyi secara default */
+    position: fixed; /* Menempatkan di atas konten lainnya */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    justify-content: center; /* Menyelaraskan popup di tengah */
+    align-items: center; /* Menyelaraskan popup di tengah secara vertikal */
+    z-index: 1001; /* Lapisan di atas popup keranjang */
+}
+
+/* Form Checkout */
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Tambahkan jarak antar elemen */
+}
+
+#checkout-form label {
+    font-weight: bold;
+}
+
+#checkout-form input, #checkout-form textarea {
+    border-radius: 10px; /* Membulatkan form input */
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Pastikan input menyesuaikan dengan lebar form */
+    box-sizing: border-box; /* Pastikan padding dihitung dalam lebar total */
+}
+
+#checkout-form button {
+    background-color: #007bff; /* Warna tombol biru */
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 30px; /* Membuat tombol lebih membulat */
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+}
+
+#checkout-form button:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+#checkout-form button[type="button"] {
+    background-color: #dc3545; /* Warna merah untuk tombol kembali */
+}
+
+#checkout-form button[type="button"]:hover {
+    background-color: #c82333; /* Merah lebih gelap saat hover */
+}
+
+
+/* Animasi Fade In dan Fade Out */
+.cart-popup, .checkout-popup {
+    display: none; /* Tetap disembunyikan secara default */
+    opacity: 0; /* Mulai dengan transparansi penuh */
+    transition: opacity 0.5s ease-in-out; /* Tambahkan transisi */
+}
+
+/* Ketika pop-up muncul (display: flex), atur opacity menjadi 1 */
+.cart-popup.show, .checkout-popup.show {
+    display: flex; /* Ubah display menjadi flex untuk menampilkan pop-up */
+    opacity: 1; /* Atur opacity menjadi 1 untuk menampilkan pop-up */
+}
+
+/* Animasi untuk konten pop-up */
+.cart-popup-content, .checkout-popup-content {
+    transform: scale(0.8); /* Mulai dari ukuran yang lebih kecil */
+    transition: transform 0.3s ease-in-out; /* Tambahkan transisi */
+}
+
+.cart-popup.show .cart-popup-content, 
+.checkout-popup.show .checkout-popup-content {
+    transform: scale(1); /* Perbesar ke ukuran normal */
+}
+
+/* Gaya Global */
+body {
+    font-family: 'Poppins', sans-serif; /* Ganti font menjadi Poppins */
+    background-color: #f0f2f5; /* Warna latar belakang yang lebih terang dan modern */
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3, h4, p {
+    color: #333; /* Warna teks yang lebih lembut */
+}
+
+/* Peningkatan pada tabel produk */
+.cart {
+    background-color: rgba(255, 255, 255, 0.9); /* Warna background semi-transparan */
+    border-radius: 15px; /* Membuat sudut tabel lebih halus */
+    padding: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lembut di sekitar tabel */
+    backdrop-filter: blur(5px); /* Efek blur untuk latar belakang tabel */
+}
+
+.cart h2 {
+    font-size: 28px; /* Ukuran font lebih besar */
+    color: #1c1e21; /* Warna teks lebih gelap */
+    text-align: center; /* Teks di tengah */
+}
+
+/* Hover pada item produk */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi hover */
+}
+
+.quantity-controls input {
+    border-radius: 5px; /* Membuat input lebih halus */
+}
+
+/* Tombol Submit */
+.btn-submit {
+    background-color: #007bff; /* Biru lebih terang */
+    color: white;
+    border: none; /* Menghapus border tombol */
+    padding: 12px 25px; /* Padding yang lebih besar */
+    font-size: 18px;
+    border-radius: 30px; /* Membuat tombol lebih membulat */
+    transition: background-color 0.3s ease; /* Transisi hover */
+}
+
+/* Pop-up */
+.cart-popup-content, .checkout-popup-content {
+    background-color: #ffffff;
+    border-radius: 20px; /* Sudut lebih membulat */
+    padding: 25px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh; /* Batasi tinggi maksimum menjadi 80% dari tinggi viewport */
+    overflow-y: auto; /* Tambahkan scrollbar vertikal jika konten melebihi tinggi maksimum */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.cart-popup-close, .checkout-popup-close {
+    position: absolute; /* Posisi absolut di dalam popup */
+    top: 10px; /* Jarak dari bagian atas */
+    right: 10px; /* Jarak dari bagian kanan */
+    font-size: 24px; /* Ukuran font */
+    cursor: pointer; /* Pointer saat hover */
+    color: #333;
+}
+
+.btn-checkout {
+    background-color: #28a745; /* Warna hijau lebih cerah */
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px; /* Membuat tombol lebih membulat */
+    transition: background-color 0.3s ease; /* Transisi hover */
+}
+
+.btn-checkout:hover {
+    background-color: #218838; /* Hijau lebih gelap saat hover */
+}
+
+/* Form Checkout */
+#checkout-form input, #checkout-form textarea {
+    border-radius: 10px; /* Membulatkan form input */
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#checkout-form button {
+    background-color: #007bff; /* Warna tombol biru */
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 30px; /* Membuat tombol lebih membulat */
+}
+
+#checkout-form button:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+#checkout-form button[type="button"] {
+    background-color: #dc3545; /* Warna merah untuk tombol kembali */
+}
+
+#checkout-form button[type="button"]:hover {
+    background-color: #c82333; /* Merah lebih gelap saat hover */
+}
+
+/* Tambahkan Animasi Smooth Scroll */
+html {
+    scroll-behavior: smooth; /* Scroll halus */
+}
